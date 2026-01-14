@@ -57,7 +57,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>To-Do App</h1>
+      <h1>What is your plan today 🙂 ?</h1>
 
       <div className="search">
         <input
