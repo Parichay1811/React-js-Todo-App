@@ -42,11 +42,22 @@
   flex-direction: column;
   justify-content: space-between;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  overflow-y: scroll;
   box-sizing: border-box;
+
+  /* SCROLL ENABLED */
+  overflow-y: auto;
+
+  /* HIDE SCROLLBAR */
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    /* IE & Edge */
 }
 
-/* TEXT (JSX SAFE – targets first span only) */
+/* Chrome / Safari */
+.todo-card::-webkit-scrollbar {
+  display: none;
+}
+
+/* TEXT */
 .todo-card > span:first-child {
   text-align: left;
   word-break: break-word;
@@ -95,9 +106,7 @@
 
 /* ---------------- MOBILE & TABLET (BAR VIEW) ---------------- */
 @media (max-width: 900px) {
-  .search{
-    width: 100%;
-  }
+
   .searchBar {
     width: 90%;
   }
@@ -119,10 +128,18 @@
     padding: 14px 16px;
     border-radius: 6px;
     max-width: 100%;
-    overflow: hidden;
+    overflow-y: auto;
+
+    /* HIDE SCROLLBAR (MOBILE TOO) */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
-  /* TEXT FIX (YOUR ISSUE) */
+  .todo-card::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* TEXT FIX */
   .todo-card > span:first-child {
     flex: 1;
     margin-right: 10px;
