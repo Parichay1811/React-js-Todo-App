@@ -1,0 +1,150 @@
+/* ---------------- APP ---------------- */
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* ---------------- SEARCH ---------------- */
+.searchBar {
+  width: 500px;
+  border: none;
+  background-color: rgb(215, 215, 215);
+  padding: 10px;
+  border-radius: 20px;
+  outline: none;
+}
+
+/* ---------------- CONTAINER ---------------- */
+.container {
+  width: 100%;
+  margin: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* ---------------- DESKTOP CARDS ---------------- */
+.todo-card {
+  width: 150px;
+  height: 200px;
+  padding: 10px;
+  background-color: rgb(233, 233, 233);
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 7px 29px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  overflow-y: scroll;
+  box-sizing: border-box;
+}
+
+/* TEXT (JSX SAFE – targets first span only) */
+.todo-card > span:first-child {
+  text-align: left;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* ---------------- BUTTONS ---------------- */
+.btn {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.btn-1 {
+  background-color: red;
+  color: white;
+  font-size: large;
+  border: none;
+  cursor: pointer;
+}
+.btn-1:hover {
+  background-color: rgb(150, 0, 0);
+}
+
+.btn-2 {
+  background-color: black;
+  color: white;
+  font-size: large;
+  border: none;
+  cursor: pointer;
+}
+.btn-2:hover {
+  background-color: rgb(38, 38, 38);
+}
+
+.btn-3 {
+  background-color: rgb(9, 234, 255);
+  color: black;
+  font-size: large;
+  border: none;
+  cursor: pointer;
+}
+.btn-3:hover {
+  background-color: aqua;
+}
+
+/* ---------------- MOBILE & TABLET (BAR VIEW) ---------------- */
+@media (max-width: 900px) {
+  .search{
+    width: 100%;
+  }
+  .searchBar {
+    width: 90%;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: stretch;
+    margin: 10px;
+    padding: 20px;
+  }
+
+  /* BAR STYLE */
+  .todo-card {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 14px 16px;
+    border-radius: 6px;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  /* TEXT FIX (YOUR ISSUE) */
+  .todo-card > span:first-child {
+    flex: 1;
+    margin-right: 10px;
+    text-align: left;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.4;
+  }
+
+  /* BUTTONS INLINE */
+  .btn {
+    flex-direction: row;
+    gap: 8px;
+    flex-shrink: 0;
+    align-self: center;
+  }
+
+  .btn-1,
+  .btn-2,
+  .btn-3 {
+    font-size: 14px;
+    padding: 5px 8px;
+  }
+}
